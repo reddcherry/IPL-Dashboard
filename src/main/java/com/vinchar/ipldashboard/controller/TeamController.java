@@ -3,6 +3,7 @@ package com.vinchar.ipldashboard.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import com.vinchar.ipldashboard.repo.MatchRepository;
 import com.vinchar.ipldashboard.repo.TeamRepository;
 
 @RestController
+@CrossOrigin
 public class TeamController {
  
 private TeamRepository teamRepository;
