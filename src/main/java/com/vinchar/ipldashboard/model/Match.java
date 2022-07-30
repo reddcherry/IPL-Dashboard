@@ -19,7 +19,7 @@ public class Match {
  private String TossDecision; 
  private String WinningTeam; 
  private String WonBy; 
- private String Margin; 
+ private String margin; 
  private String PlayerOfMatch; 
  private String Team1Players; 
  private String Team2Players; 
@@ -91,10 +91,10 @@ public class Match {
   WonBy = wonBy;
  }
  public String getMargin() {
-  return Margin;
+  return margin;
  }
  public void setMargin(String margin) {
-  Margin = margin;
+  this.margin = margin;
  }
 
  public String getTeam1Players() {

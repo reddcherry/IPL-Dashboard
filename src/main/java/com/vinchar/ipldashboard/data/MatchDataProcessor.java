@@ -34,6 +34,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
   match.setUmpire2(matchInput.getUmpire2());
   match.setTeam1(matchInput.getTeam1());
   match.setTeam2(matchInput.getTeam2());
+  match.setMargin(matchInput.getMargin());
 
 
   String firstInningsTeam, secondInningsTeam;
