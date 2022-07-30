@@ -1,0 +1,22 @@
+.matchDetailCard{
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ margin-bottom: 20px;
+}
+ .matchDate, .matchVenue, .matchResult{
+  margin-top: 10px;
+ }
+
+ .additionalDetail{
+  text-align: right;
+
+ }
+ .additionalDetail p{
+  margin-bottom: 15px;
+ }
+ .won{
+  background-color: green;
+ }
+ .lost{
+  background-color: #D0342C;
+ }

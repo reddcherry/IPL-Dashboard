@@ -1,0 +1,12 @@
+ .won{
+  background-color: green;
+ }
+ .lost{
+  background-color: #D0342C;
+ }
+
+ .matchSmallCard{
+  min-height: 10rem;
+  padding: 10px;
+  
+ }

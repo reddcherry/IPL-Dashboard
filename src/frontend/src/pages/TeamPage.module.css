@@ -1,0 +1,33 @@
+.teamPage{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-rows: 0.5fr 1fr 1fr;
+ gap: 10px;
+}
+
+.teamNameSection{
+ grid-column: span 3;
+  align-self: end;
+}
+
+.teamName{
+ font-size: 4rem;
+}
+.matchDetailSection{
+ grid-column: span 4;
+
+}
+
+.winLossSection{
+ justify-self: center;
+ padding-top: 30px;
+ padding-bottom: 30px;
+ text-align: center;
+ max-height: 10rem;
+}
+
+.more{
+  align-self: center;
+  justify-self: center;
+  font-size: 1.5rem;
+}

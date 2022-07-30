@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import classes from './MatchSmallCard.module.css'
 
 function MatchSmallCard({match}) {
 
@@ -7,11 +8,15 @@ function MatchSmallCard({match}) {
   const oppositeTeam =
    match.team1 === params.teamName ? match.team2 : match.team1;
    // console.log(match);
+     const hasTeamWon = match.winningTeam === params.teamName;
+
+   const mainClass =
+     classes.matchSmallCard + " " + (hasTeamWon ? classes.won : classes.lost);
 
    const oppTeamLink = `/teams/${oppositeTeam}`
 
   return (
-    <div className="MatchSmallCard">
+    <div className={mainClass}>
       <h3>
         vs <Link to={oppTeamLink} > {oppositeTeam}</Link>
       </h3>

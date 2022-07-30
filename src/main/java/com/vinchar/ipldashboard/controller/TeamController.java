@@ -61,7 +61,7 @@ public List<Match> findAllMatches(){
 
 @GetMapping("/matches/{teamName}")
 public List<Match> findTeam1(@PathVariable String teamName){
- return matchRepository.findByTeam1OrTeam2OrderByDateDesc(teamName, 5);
+ return matchRepository.findByTeam1OrTeam2OrderByDateDesc(teamName, 4);
 }
 
 @GetMapping("/team/{teamName}/matches")
