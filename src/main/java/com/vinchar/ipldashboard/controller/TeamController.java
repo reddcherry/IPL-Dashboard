@@ -1,11 +1,15 @@
 package com.vinchar.ipldashboard.controller;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -34,17 +38,21 @@ public TeamController(MatchRepository matchRepository, TeamRepository teamReposi
 //  this.teamRepository = teamRepository;
 // }
 
-@GetMapping("/teams")
-public List<Team> getTeam(){
+// @GetMapping("/teams")
+// public List<Team> getTeam(){
 
- return teamRepository.findAll();
-}
+//  return teamRepository.findAll();
+// }
 
-@GetMapping("/teams/{teamName}")
-public Team findTeam(@PathVariable String teamName){
+// @GetMapping("/teams/{teamName}")
+// public Team findTeam(@PathVariable String teamName){
 
- return teamRepository.findByTeamName(teamName);
-}
+//  Team team = teamRepository.findByTeamName(teamName);
+
+// //  System.out.println(team);
+//  return team;
+
+// }
 
 @GetMapping("/matches")
 public List<Match> findAllMatches(){
@@ -53,8 +61,24 @@ public List<Match> findAllMatches(){
 
 @GetMapping("/matches/{teamName}")
 public List<Match> findTeam1(@PathVariable String teamName){
-
- // Pageable page = PageRequest.of(0, 4);
  return matchRepository.findByTeam1OrTeam2OrderByDateDesc(teamName, 5);
 }
+
+@GetMapping("/team/{teamName}/matches")
+public List<Match> getMatchesForTeam(@PathVariable String teamName, @RequestParam int year){
+
+  // List <Match> list = matchRepository.getByTeam1OrTeam2OrderByDateDesc(teamName, teamName);
+  // List<Match> finalList = new ArrayList<>();
+  // list.stream().filter(match-> match.getDate().getYear()==year).forEach(match-> finalList.add(match));;
+
+
+  LocalDate startDate = LocalDate.of(year, 1, 1);
+  LocalDate endDate = LocalDate.of(year, 12, 31);
+
+
+   return matchRepository.getMatch(teamName, startDate, endDate);
+
+}
+
+
 }
