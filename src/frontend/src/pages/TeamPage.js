@@ -36,8 +36,8 @@ function TeamPage() {
       }
     });
   };
-  console.log(totalMatches);
-  console.log(totalWins);
+  // console.log(totalMatches);
+  // console.log(totalWins);
   useEffect(() => {
     fetchMatches();
     fetchMatchCount();
@@ -72,7 +72,7 @@ function TeamPage() {
         </div>
       ))}
       <div className={classes.more}>
-        <Link to="#">More {">"} </Link>
+        <Link to={`/teams/${params.teamName}/matches/2022`}>More {">"} </Link>
       </div>
     </div>
   );

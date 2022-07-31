@@ -38,11 +38,11 @@ public TeamController(MatchRepository matchRepository, TeamRepository teamReposi
 //  this.teamRepository = teamRepository;
 // }
 
-// @GetMapping("/teams")
-// public List<Team> getTeam(){
+@GetMapping("/teams")
+public List<Team> getTeam(){
 
-//  return teamRepository.findAll();
-// }
+ return teamRepository.findAll();
+}
 
 // @GetMapping("/teams/{teamName}")
 // public Team findTeam(@PathVariable String teamName){

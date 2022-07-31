@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import MatchSmallCard from '../components/MatchSmallCard'
+import YearSelector from '../components/YearSelector';
+import classes from './MatchPage.module.css'
 
 function MatchPage({matchCountSender}) {
   const[matches, setMatches] = useState([]);
@@ -30,13 +32,24 @@ function MatchPage({matchCountSender}) {
 
 
   // console.log(matches);
-  // if(matches==null) return;
+  
   return (
-    <div className='MatchPage'>
-      <h1>MatchPage</h1>
-      {matches.map(match=><MatchSmallCard match ={match} key= {match.id} />)}
+    <div className={classes.matchPage}>
+      <YearSelector teamName={teamName} />
+      <div>
+        {matches.length === 0 ? (
+          <h2>
+            {teamName} didn't play in {year}
+          </h2>
+        ) : (
+          <h2>{teamName} in {year}</h2>
+        )}
+        {matches.map((match) => (
+          <MatchSmallCard match={match} key={match.id} />
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
 export default MatchPage
